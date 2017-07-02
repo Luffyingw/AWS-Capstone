@@ -32,6 +32,15 @@ http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenarios.html
 <br>
 <br>
 
+## Others:
+```
+aws ec2 describe-vpcs
+aws ec2 describe-vpcs --vpc-ids vpc-9e03bfe7
+aws ec2 describe-subnets
+aws ec2 describe-subnets --filters "Name=vpc-id,Values=vpc-9e03bfe7"
+aws ec2 describe-subnets --filters "Name=vpc-id,Values=vpc-0aa61173" --query 'Subnets[*].{ID:SubnetId,CIDR:CidrBlock}'
+```
+
 ## Step1: To create a VPC and subnets using the AWS CLI
 
 **1. Create a VPC with a 10.0.0.0/16 CIDR block.**
